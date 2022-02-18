@@ -1,4 +1,4 @@
-package bk.vaskevich.softLine;
+package bk.vaskevich.fairtech;
 
 import bk.vaskevich.helpers.Attach;
 import com.codeborne.selenide.Configuration;
@@ -6,9 +6,11 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.junit.jupiter.api.BeforeEach;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
@@ -23,7 +25,7 @@ public class TestBase {
         String url = System.getProperty("url");
         String remoteUrl = "https://" + login + ":" + password + "@" + url;*/
 
-        Configuration.baseUrl = "https://softline.com/";
+        baseUrl = "https://fairtech.ru/";
         Configuration.browserSize = "1920x1080";
         /*Configuration.browser = browser;
         Configuration.browserVersion = version;
